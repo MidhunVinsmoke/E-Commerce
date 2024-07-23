@@ -1,0 +1,130 @@
+.tax-invoice {
+    font-family: 'Arial', sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .invoice-header,
+  .invoice-customer-info,
+  .invoice-items,
+  .invoice-summary,
+  .invoice-payment-info,
+  .invoice-footer,
+  .invoice-download {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-header h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .invoice-header p {
+    text-align: center;
+    color: #666;
+  }
+  
+  .invoice-customer-info h2,
+  .invoice-items h2,
+  .invoice-summary h2,
+  .invoice-payment-info h2,
+  .invoice-footer h2 {
+    font-size: 1.5em;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .invoice-customer-info p,
+  .invoice-items .item-details p,
+  .invoice-items .item-price p,
+  .invoice-summary .summary-item p,
+  .invoice-payment-info p,
+  .invoice-footer p {
+    color: #555;
+  }
+  
+  .invoice-items {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  .invoice-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .item-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .item-details img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .item-price p {
+    text-align: right;
+  }
+  
+  .invoice-summary .summary-item,
+  .invoice-summary h3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  
+  .invoice-download {
+    text-align: center;
+  }
+  
+  .invoice-download button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .invoice-download button:hover {
+    background: #0056b3;
+  }
+  
+  .invoice-footer {
+    text-align: center;
+  }
+  
+  .invoice-footer p {
+    color: #777;
+  }
+  
+  @media print {
+    .tax-invoice {
+      box-shadow: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+    
+    .invoice-download {
+      display: none;
+    }
+  }
+  
