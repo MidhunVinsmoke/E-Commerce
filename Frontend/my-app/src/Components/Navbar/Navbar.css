@@ -71,3 +71,71 @@
     background-color:#FF4141;
     color: white;
 }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .nav-logo p {
+        font-size: 30px;
+    }
+
+    .nav-menu {
+        gap: 30px;
+        font-size: 18px;
+    }
+
+    .nav-login-cart {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-login-cart button {
+        width: 140px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .nav-cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        margin-top: -25px;
+        margin-left: -45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px;
+    }
+
+    .nav-logo p {
+        font-size: 24px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .nav-login-cart {
+        gap: 15px;
+    }
+
+    .nav-login-cart button {
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .nav-cart-count {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+        margin-top: -20px;
+        margin-left: -35px;
+    }
+}

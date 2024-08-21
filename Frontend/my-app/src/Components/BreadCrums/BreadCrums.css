@@ -8,3 +8,23 @@
     margin: 60px 170px;
     text-transform: capitalize;
 }
+@media (max-width: 991px) {
+    .breadcrum {
+        font-size: 14px;
+        margin: 40px 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrum {
+        font-size: 13px;
+        margin: 30px 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .breadcrum {
+        font-size: 12px;
+        margin: 20px 30px;
+    }
+}

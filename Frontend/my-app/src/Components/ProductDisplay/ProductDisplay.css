@@ -86,3 +86,124 @@
 .productdisplay-right-category span{
     font-weight: 600;
 }
+@media (max-width: 1200px) {
+    .productdisplay {
+        padding: 0px 5%;
+        gap: 30px;
+    }
+
+    .productdisplay-main-img {
+        height: 400px;
+    }
+
+    .productdisplay-right h1 {
+        font-size: 26px;
+    }
+
+    .productdisplay-right-stars {
+        font-size: 12px;
+    }
+
+    .productdisplay-right-prices {
+        font-size: 20px;
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 16px;
+    }
+
+    .productdisplay-right-sizes div {
+        padding: 14px 18px;
+    }
+
+    .productdisplay-right button {
+        width: 180px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    .productdisplay {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 2%;
+    }
+
+    .productdisplay-left {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .productdisplay-main-img {
+        height: 300px;
+    }
+
+    .productdisplay-right h1 {
+        font-size: 22px;
+    }
+
+    .productdisplay-right-stars {
+        font-size: 11px;
+    }
+
+    .productdisplay-right-prices {
+        font-size: 18px;
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 14px;
+    }
+
+    .productdisplay-right-sizes {
+        flex-wrap: wrap;
+    }
+
+    .productdisplay-right-sizes div {
+        padding: 12px 16px;
+    }
+
+    .productdisplay-right button {
+        width: 160px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .productdisplay {
+        padding: 0px;
+        gap: 20px;
+    }
+
+    .productdisplay-left {
+        gap: 5px;
+    }
+
+    .productdisplay-main-img {
+        height: 250px;
+    }
+
+    .productdisplay-right h1 {
+        font-size: 18px;
+    }
+
+    .productdisplay-right-stars {
+        font-size: 10px;
+    }
+
+    .productdisplay-right-prices {
+        font-size: 16px;
+    }
+
+    .productdisplay-right-size h1 {
+        font-size: 12px;
+    }
+
+    .productdisplay-right-sizes div {
+        padding: 10px 12px;
+    }
+
+    .productdisplay-right button {
+        width: 140px;
+        font-size: 10px;
+    }
+}

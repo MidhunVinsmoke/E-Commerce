@@ -22,3 +22,40 @@
     display: flex;
     gap: 30px;
 }
+@media (max-width: 1200px) {
+    .relatedproducts h1 {
+        font-size: 40px;
+    }
+
+    .relatedproducts hr {
+        width: 150px;
+        height: 5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .relatedproducts h1 {
+        font-size: 35px;
+    }
+
+    .relatedproducts hr {
+        width: 120px;
+        height: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    .relatedproducts h1 {
+        font-size: 30px;
+    }
+
+    .relatedproducts hr {
+        width: 100px;
+        height: 3px;
+    }
+
+    .relatedproducts-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

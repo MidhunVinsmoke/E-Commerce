@@ -1,12 +1,51 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./TaxInvoice.css";
 import { ShopContext } from "../../Context/ShopContext";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
 const TaxInvoice = () => {
+  //states and hooks
+  const [user,setUser] = useState({
+    name:'',
+    email:'',
+    address:''
+  })
+
+  const [newUser,setNewUser] = useState({
+    newName:'',
+    newEmail:'',
+    newAddress:''
+  })
+
+  const [showTaxInvoice,setShowTaxInvoice] = useState(false)
 
   const { cartItems, all_product } = useContext(ShopContext);
+
+  //functions
+
+  const handleChange = (e) =>{
+    const {id,value} = e.target
+    setUser(prevUser => ({
+      ...prevUser,
+      [id]:value
+    }))
+  }
+
+  const handleSubmit = () =>{
+    if(user.name.trim() !== '',user.email.trim() !== '',user.address.trim() !== ''){
+      setNewUser({
+        newName:user.name,
+        newEmail:user.email,
+        newAddress:user.address
+      }) 
+      alert('user details added')
+      setUser({name:"",email:"",address:""})
+      setShowTaxInvoice(true)
+    }else{
+      alert('please add user details')
+    } 
+  }
 
   const calculateTotalPrice = (productId, quantity) => {
     const product = all_product.find((item) => item.id === productId);
@@ -54,7 +93,35 @@ const TaxInvoice = () => {
   const totalAmount = getTotalCartAmount();
 
   return (
-    <div className="tax-invoice">
+   <> 
+    <div className="container">
+      <h4>User Details</h4>
+      <label htmlFor="name">Name:</label>
+      <input type="text" placeholder="Enter your Name" 
+      id="name"
+      value={user.name}
+      onChange={handleChange}
+      />
+
+      <label htmlFor="email">Email:</label>
+      <input type="email" placeholder="Enter your Email" 
+      id="email"
+      value={user.email}
+      onChange={handleChange}
+      />
+
+     <label htmlFor="address">Address:</label>
+      <input type="text" placeholder="Enter your Address" 
+      id="address"
+      value={user.address}
+      onChange={handleChange}
+      />
+
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+
+
+    {showTaxInvoice && (<div className="tax-invoice">
       <div className="invoice-header">
         <h1>Tax Invoice</h1>
         <p>Invoice Number: #{generateInvoiceNumber()}</p>
@@ -63,9 +130,9 @@ const TaxInvoice = () => {
 
       <div className="invoice-customer-info">
         <h2>Customer Information</h2>
-        <p>Name: John Doe</p>
-        <p>Email: john.doe@example.com</p>
-        <p>Address: 123 Main Street, City, Country</p>
+        <p>Name: {newUser.newName}</p>
+        <p>Email: {newUser.newEmail}</p>
+        <p>Address: {newUser.newAddress}</p>
       </div>
 
       <div className="invoice-items">
@@ -114,13 +181,14 @@ const TaxInvoice = () => {
 
       <div className="invoice-footer">
         <h2>Thank You!</h2>
-        <p>If you have any questions about this invoice, please contact us at support@example.com.</p>
+        <p>If you have any questions about this invoice, please contact us at support@shopper.com.</p>
       </div>
 
       <div className="invoice-download">
         <button onClick={handleDownloadPDF}>Download Invoice as PDF</button>
       </div>
-    </div>
+    </div>)}
+    </>
   );
 };
 
